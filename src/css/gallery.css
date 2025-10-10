@@ -4,12 +4,20 @@
 }
 
 .swiper {
+  width: 100%;
   padding: 0 86px;
-  width: 1440px;
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: hidden;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: auto;
 }
 
 .swiper-slide img {
-  width: 448px;
+  width: 100%;
+  max-width: 448px;
   height: 520px;
   object-fit: cover;
   cursor: pointer;
