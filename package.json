@@ -17,6 +17,10 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@fancyapps/ui": "^6.0.34",
+    "@fontsource/montserrat": "^5.2.8",
+    "@fontsource/roboto": "^5.2.8",
+    "swiper": "^12.0.2",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }

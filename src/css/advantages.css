@@ -1,0 +1,26 @@
+.advantages-page {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px 80px;
+}
+
+.advantages-list li {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - 40px);
+}
+
+.wrapper-list-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
