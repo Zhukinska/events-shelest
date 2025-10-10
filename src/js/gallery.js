@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
     spaceBetween: 10,
     pagination: false,
     speed: 800,
-    fadeEffect: { crossFade: true },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       1260: {
         slidesPerView: 3,
-        spaceBetween: 40,
+        spaceBetween: 30,
       },
     },
   });

@@ -1,13 +1,14 @@
 #gallery-menu {
   padding: 150px 16px 70px 16px;
   position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .swiper {
-  width: 100%;
   padding: 0 86px;
   margin: 0 auto;
-  max-width: 1200px;
+  width: 1200px;
   overflow: hidden;
 }
 .swiper-slide {
@@ -25,8 +26,8 @@
 
 .gallery .swiper-button-next,
 .gallery .swiper-button-prev {
-  top: 65%;
-  transform: translateY(-50%);
+  top: 30%;
+  transform: translateY(40%);
   position: absolute;
   z-index: 10;
   width: 70px;
