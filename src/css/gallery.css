@@ -26,14 +26,13 @@
 
 .gallery .swiper-button-next,
 .gallery .swiper-button-prev {
-  top: 30%;
-  transform: translateY(40%);
+  top: 65%;
+  transform: translateY(-50%);
   position: absolute;
   z-index: 10;
   width: 70px;
   height: 40px;
   background-color: transparent;
-  color: #335446;
   border-radius: 50%;
   display: flex;
   align-items: center;
