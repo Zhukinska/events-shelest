@@ -7,8 +7,8 @@ import 'swiper/swiper-bundle.css';
 document.addEventListener('DOMContentLoaded', function () {
   const galleryContainer = document.getElementById('gallery-container');
   const totalImages = 10;
-  const thumbFolder = '/thumbs/';
-  const fullFolder = '/full/';
+  const thumbFolder = 'img/thumbs/';
+  const fullFolder = 'img/full/';
   const fileExtension = '.jpg';
 
   for (let i = 1; i <= totalImages; i++) {
