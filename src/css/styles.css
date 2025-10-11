@@ -12,10 +12,11 @@
 @import url('./modal.css');
 
 :root {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'StavokGrotesque', sans-serif;
   font-weight: 400;
   letter-spacing: 0.48px;
   color: #335446;
+
   background-color: #ece9de;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,11 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 h1,
 h2,
 h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'StavokGrotesque', sans-serif;
   font-weight: 700;
 }
 
@@ -35,28 +39,29 @@ p,
 button,
 input,
 textarea {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'StavokGrotesque', sans-serif;
   font-weight: 400;
 }
 
 .container {
-  padding-left: 8px;
-  padding-right: 8px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   min-width: 320px;
-
   overflow: hidden;
+  max-width: 1440px;
+}
 
-  @media screen and (max-width: 319px) {
-    width: 100%;
+/* Мобільна версія — до 375px включно */
+@media screen and (max-width: 375px) {
+  .container {
+    max-width: 375px; /* необов’язково, але часто додають відступи */
   }
+}
 
-  @media screen and (min-width: 320px) {
-    width: 375px;
-  }
-
-  @media screen and (min-width: 1400px) {
-    width: 1440px;
+/* Десктопна версія — від 1440px */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
   }
 }

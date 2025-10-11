@@ -1,23 +1,28 @@
 #gallery-menu {
-  padding: 60px 16px 60px 16px;
-  position: relative;
-  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
+  padding: 60px 15px;
+
+  @media screen and (min-width: 1440px) {
+    padding: 60px 60px;
+  }
 }
 
 .swiper {
-  padding: 0 86px;
   margin: 0 auto;
-  width: 1200px;
+  max-width: 345px;
   overflow: hidden;
-}
-.swiper-slide {
-  flex-shrink: 0;
-  width: auto;
+  position: relative;
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1200px;
+  }
 }
 
 .swiper-slide img {
-  width: 380px;
+  width: 700px;
   height: 520px;
   object-fit: cover;
   cursor: pointer;
@@ -25,7 +30,8 @@
 
 .gallery .swiper-button-next,
 .gallery .swiper-button-prev {
-  top: 65%;
+  top: 50%;
+
   transform: translateY(-50%);
   position: absolute;
   z-index: 10;
@@ -37,12 +43,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.swiper-button-next {
-  right: 0px;
-}
-
-.swiper-button-prev {
-  left: 0px;
 }

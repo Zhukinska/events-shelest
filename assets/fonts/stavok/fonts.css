@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'StavokGrotesque';
+  src: url('./StavokGrotesque-Regular.woff2') format('woff2'),
+    url('./StavokGrotesque-Regular.woff') format('woff'),
+    url('./StavokGrotesque-Regular.eot') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'StavokGrotesque';
+  src: url('./StavokGrotesque-Light.woff2') format('woff2'),
+    url('./StavokGrotesque-Light.woff') format('woff'),
+    url('./StavokGrotesque-Light.eot') format('embedded-opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'StavokGrotesque';
+  src: url('./StavokGrotesque-SemiBold.woff2') format('woff2'),
+    url('./StavokGrotesque-SemiBold.woff') format('woff'),
+    url('./StavokGrotesque-SemiBold.eot') format('embedded-opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'StavokGrotesque';
+  src: url('./StavokGrotesque-Bold.woff2') format('woff2'),
+    url('./StavokGrotesque-Bold.woff') format('woff'),
+    url('./StavokGrotesque-Bold.eot') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'StavokGrotesque';
+  src: url('./StavokGrotesque-BoldItalic.woff2') format('woff2'),
+    url('./StavokGrotesque-BoldItalic.woff') format('woff'),
+    url('./StavokGrotesque-BoldItalic.eot') format('embedded-opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}

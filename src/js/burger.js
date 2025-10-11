@@ -1,6 +1,8 @@
 const menuButton = document.querySelector('.js-btn-burger-menu');
 const closeButton = document.querySelector('.js-close-menu');
 const burgerMenu = document.querySelector('.js-burger-menu');
+const menuNavLinks = document.querySelectorAll('.js-menu-link');
+const logoEl = document.querySelector('.js-logo');
 
 function openMenu() {
   burgerMenu.classList.add('active');
@@ -27,3 +29,15 @@ document.addEventListener('click', event => {
     closeMenu();
   }
 });
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeMenu();
+  }
+});
+
+menuNavLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+logoEl.addEventListener('click', closeMenu);
