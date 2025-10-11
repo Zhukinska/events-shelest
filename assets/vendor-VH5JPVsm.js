@@ -12,4 +12,4 @@
         rotateZ(${l.rotate?d?-E:E:0}deg)
         scale(${O})
       `;if(l.slideShadows){let k=o.querySelector(".swiper-slide-shadow");k||(k=$t("cards",o)),k&&(k.style.opacity=Math.min(Math.max((Math.abs(u)-.5)/.5,0),1))}o.style.zIndex=-Math.abs(Math.round(r))+a.length;const A=Bt(l,o);A.style.transform=I}},setTransition:a=>{const c=e.slides.map(d=>xt(d));c.forEach(d=>{d.style.transitionDuration=`${a}ms`,d.querySelectorAll(".swiper-slide-shadow").forEach(l=>{l.style.transitionDuration=`${a}ms`})}),sn({swiper:e,duration:a,transformElements:c})},perspective:()=>!0,overwriteParams:()=>({_loopSwapReset:!1,watchSlidesProgress:!0,loopAdditionalSlides:e.params.cardsEffect.rotate?3:2,centeredSlides:!0,virtualTranslate:!e.params.cssMode})})}const wa=[sa,aa,oa,ra,ca,da,ua,fa,ma,ha,pa,ga,va,ya,ba,Ea,La,Pa,Oa,Aa,za,$a,Ia];Qe.use(wa);export{De as N,Qe as S};
-//# sourceMappingURL=vendor-thQyu6wW.js.map
+//# sourceMappingURL=vendor-VH5JPVsm.js.map
