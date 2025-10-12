@@ -2,8 +2,8 @@
   padding: 80px 15px;
   margin: 0 auto;
 
-  @media screen and (min-width: 1440px) {
-    padding: 80px;
+  @media screen and (min-width: 1280px) {
+    padding: 80px 40px;
   }
 }
 
@@ -11,7 +11,7 @@
   margin: 0 auto;
   max-width: 375px;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     max-width: 1200px;
   }
 }
@@ -26,7 +26,7 @@
   line-height: 120%;
   letter-spacing: 2.5px;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 0px;
   }
 }
@@ -38,7 +38,7 @@
   align-items: center;
   gap: 90px;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0px 90px;
@@ -65,7 +65,7 @@
   object-fit: contain;
   height: fit-content;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     max-width: 550px;
     object-fit: cover;
     height: 704px;
@@ -78,20 +78,20 @@
   gap: 20px;
   max-width: 351px;
   box-sizing: border-box;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     max-width: 550px;
     gap: 40px;
   }
 }
 
 .item-reverse {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     margin-top: 240px;
   }
 }
 
 .item {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     margin-top: -240px;
   }
 }

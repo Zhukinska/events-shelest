@@ -1,0 +1,66 @@
+/* From Uiverse.io by mohit_7083 */
+.Btn {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #335446;
+  justify-content: space-between;
+  opacity: 0.9;
+}
+
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sign img {
+  width: 44px;
+}
+
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover {
+  width: 220px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover .sign {
+  width: 20%;
+  transition-duration: 0.3s;
+  padding-left: 10px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+.Btn:active {
+  transform: translate(2px, 2px);
+}

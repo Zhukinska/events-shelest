@@ -10,6 +10,7 @@
 @import url('./footer.css');
 @import url('./burger.css');
 @import url('./modal.css');
+@import url('./telegram.css');
 
 :root {
   font-family: 'StavokGrotesque', sans-serif;
@@ -49,7 +50,7 @@ textarea {
   width: 100%;
   min-width: 320px;
   overflow: hidden;
-  max-width: 1440px;
+  max-width: 1280px;
 }
 
 /* Мобільна версія — до 375px включно */
@@ -60,8 +61,8 @@ textarea {
 }
 
 /* Десктопна версія — від 1440px */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
   .container {
-    max-width: 1440px;
+    max-width: 1280px;
   }
 }
