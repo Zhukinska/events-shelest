@@ -99,22 +99,24 @@
   display: flex;
   height: 44px;
   width: fit-content;
-  padding: 14px 40px;
+  padding: 0px 30px;
   align-items: center;
   gap: 10px;
   border-radius: 34px;
   background: #242f45;
   backdrop-filter: blur(40px);
   margin-top: 50px;
-  margin-left: 30px;
+  margin-left: 10px;
   color: #ece9de;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400; /* 16px */
-  letter-spacing: 1.92px;
+  letter-spacing: 2.4px;
   text-transform: uppercase;
   line-height: 100%;
-
+  white-space: nowrap;
+  outline: none;
+  box-sizing: border-box;
   @media screen and (min-width: 1280px) {
     margin-left: 30px;
   }

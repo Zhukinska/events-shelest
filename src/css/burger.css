@@ -6,7 +6,7 @@
   left: 0%;
   right: 0;
   z-index: 4000;
-  height: 100vh;
+  height: 100%;
   visibility: hidden;
   opacity: 0;
   background: #ece9de;
@@ -65,7 +65,7 @@
   gap: 60px;
 
   @media screen and (min-width: 1280px) {
-    gap: 163px;
+    gap: 140px;
   }
 }
 
@@ -135,19 +135,22 @@
   display: flex;
   height: 44px;
   width: fit-content;
-  padding: 14px 40px;
+  padding: 0 30px;
   align-items: center;
   gap: 10px;
   border-radius: 34px;
   background: #335446;
   backdrop-filter: blur(40px);
   color: #ece9de;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400; /* 16px */
-  letter-spacing: 1.92px;
+  font-weight: 400;
+  letter-spacing: 2.4px;
   text-transform: uppercase;
   line-height: 100%;
+  white-space: nowrap;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .burger-menu a:hover,
