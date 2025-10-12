@@ -94,3 +94,8 @@
   visibility: visible;
   transform: translate(-50%, -50%) scale(1.05);
 }
+
+.btn-two {
+  margin-top: 50px;
+  margin-left: 30px;
+}

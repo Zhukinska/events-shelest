@@ -74,7 +74,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -82,24 +82,25 @@
   letter-spacing: -0.12px;
 
   @media screen and (min-width: 1280px) {
-    gap: 48px;
+    gap: 50px;
   }
 }
 
 .header-btn {
-  display: inline-flex;
-  padding: 8px 20px;
+  display: flex;
+  padding: 10px;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 170px;
   border-radius: 34px;
   background: #335446;
   backdrop-filter: blur(40px);
   color: #ece9de;
-  font-size: 12px;
+  font-size: 10px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: 1.44px;
+  font-weight: 300;
+  line-height: 90%;
   text-transform: uppercase;
 }
 

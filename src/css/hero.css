@@ -20,12 +20,12 @@
   gap: 100px;
   max-width: 375px;
   margin: 0 auto;
-  padding: 200px 0 100px 0;
+  padding: 250px 0 100px 0;
 
   @media screen and (min-width: 1280px) {
     max-width: 1280px;
-    gap: 300px;
-    padding: 300px 0px 100px 0px;
+    gap: 350px;
+    padding: 550px 0px 100px 0px;
   }
 }
 
@@ -58,6 +58,6 @@
   @media screen and (min-width: 1280px) {
     font-size: 30px;
     font-weight: 500;
-    width: 1098px;
+    width: 1200px;
   }
 }
