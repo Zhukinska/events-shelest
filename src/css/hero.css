@@ -24,8 +24,8 @@
 
   @media screen and (min-width: 1280px) {
     max-width: 1280px;
-    gap: 350px;
-    padding: 550px 0px 100px 0px;
+    gap: 300px;
+    padding: 600px 0px 250px 0px;
   }
 }
 
