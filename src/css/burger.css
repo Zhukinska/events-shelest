@@ -11,10 +11,17 @@
   opacity: 0;
   background: #ece9de;
   padding: 30px 15px 30px 15px;
-
+  transform: translate(100px, -100px) scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
   @media screen and (min-width: 1280px) {
     padding: 30px 80px;
   }
+}
+
+.burger-menu.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
 }
 
 .burger-menu .container {
@@ -88,7 +95,7 @@
 .menu-footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -153,4 +160,17 @@
     font-size: 20px;
     letter-spacing: 2.4px;
   }
+}
+
+.burger-menu a:hover,
+.burger-menu a:focus,
+.burger-menu a:active {
+  text-decoration: underline;
+}
+
+.burger-btn:hover,
+.burger-btn:focus,
+.burger-btn:active {
+  background: #3f6857;
+  text-decoration: none !important;
 }

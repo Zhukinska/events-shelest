@@ -58,6 +58,18 @@
   }
 }
 
+.header-nav ul li:hover,
+.header-nav ul li:focus,
+.header-nav ul li:active {
+  text-decoration: underline;
+}
+
+.tel-header:hover,
+.tel-header:focus,
+.tel-header:active {
+  text-decoration: underline;
+}
+
 .header-right {
   display: flex;
   justify-content: center;
@@ -89,6 +101,12 @@
   line-height: 100%;
   letter-spacing: 1.44px;
   text-transform: uppercase;
+}
+
+.header-btn:hover,
+.header-btn:focus,
+.header-btn:active {
+  background: #3f6857;
 }
 
 .btn-burger-menu {

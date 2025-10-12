@@ -90,3 +90,9 @@
   fill: currentColor;
   vertical-align: middle;
 }
+
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  text-decoration: underline;
+}
