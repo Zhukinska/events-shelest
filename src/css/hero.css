@@ -5,7 +5,7 @@
   background-size: cover;
   margin: 0 auto;
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,15 +17,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 150px;
+  gap: 250px;
   max-width: 375px;
   margin: 0 auto;
-  padding: 400px 0 300px 0;
+  padding: 270px 0 100px 0;
 
   @media screen and (min-width: 1280px) {
     max-width: 1280px;
     gap: 300px;
-    padding: 600px 0px 250px 0px;
+    padding: 400px 0px 100px 0px;
   }
 }
 
