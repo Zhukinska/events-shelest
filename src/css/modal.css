@@ -85,18 +85,18 @@
 }
 
 .prev {
-  left: -50px;
+  left: -35px;
 }
 
 .next {
-  right: -50px;
+  right: -35px;
 }
 
 /* ==== КНОПКА ЗАКРИТТЯ ==== */
 .modal-close {
   position: absolute;
-  top: 60px;
-  right: 30px;
+  top: 3%;
+  right: 3%;
   font-size: 20px;
   background: none;
   border: none;

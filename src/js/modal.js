@@ -119,7 +119,7 @@ const locations = {
   },
 };
 
-// ====== МОДАЛКА ======
+// ====== ЕЛЕМЕНТИ МОДАЛКИ ======
 const modal = document.getElementById('location-modal');
 const slider = modal.querySelector('.slider');
 const title = modal.querySelector('.modal-title');
@@ -130,6 +130,7 @@ const capacityBlock = modal.querySelector('.modal-capacity');
 let currentSlides = [];
 let currentIndex = 0;
 
+// Назви макетів
 function layoutNames(layout) {
   const map = {
     theatre: 'Theatre',
@@ -140,36 +141,38 @@ function layoutNames(layout) {
   };
   return map[layout] || layout;
 }
-// Відкрити модалку
+
+// ====== ВІДКРИТТЯ МОДАЛКИ ======
 document.querySelectorAll('.btn-location').forEach(btn => {
   btn.addEventListener('click', () => {
     const key = btn.closest('li').dataset.location;
     const data = locations[key];
     if (!data) return;
 
-    // Підставити дані
+    // Заповнюємо текст
     title.textContent = data.title;
     info.innerHTML = data.info;
     text.textContent = data.text;
 
+    // Ємність
     if (data.capacity) {
       capacityBlock.innerHTML = Object.entries(data.capacity)
         .map(
-          ([layout, value]) => `
-          <p><strong>${layoutNames(layout)}:</strong> ${value}</p>
-        `
+          ([layout, value]) =>
+            `<p><strong>${layoutNames(layout)}:</strong> ${value}</p>`
         )
         .join('');
     } else {
       capacityBlock.innerHTML = '';
     }
 
-    // Згенерувати слайди
+    // Слайди
     slider.innerHTML = data.images
       .map(
-        (src, i) => `<div class="slide ${i === 0 ? 'active' : ''}">
-          <img src="${src}" alt="${data.title} фото ${i + 1}" />
-        </div>`
+        (src, i) =>
+          `<div class="slide ${i === 0 ? 'active' : ''}">
+            <img src="${src}" alt="${data.title} фото ${i + 1}" />
+          </div>`
       )
       .join('');
 
@@ -177,57 +180,80 @@ document.querySelectorAll('.btn-location').forEach(btn => {
     currentIndex = 0;
 
     modal.classList.add('active');
+
+    // Підключаємо свайпи
+    addSwipeSupport();
   });
 });
 
-// Закрити модалку
+// ====== ЗАКРИТТЯ ======
 modal.querySelector('.modal-close').addEventListener('click', () => {
   modal.classList.remove('active');
 });
-
 modal.addEventListener('click', e => {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
+  if (e.target === modal) modal.classList.remove('active');
 });
 
-document.addEventListener('keydown', e => {
-  if (!modal.classList.contains('active')) return;
-
-  if (e.key === 'ArrowRight') {
-    // наступний слайд
-    currentIndex = (currentIndex + 1) % currentSlides.length;
-    showSlide(currentIndex);
-  }
-
-  if (e.key === 'ArrowLeft') {
-    // попередній слайд
-    currentIndex =
-      (currentIndex - 1 + currentSlides.length) % currentSlides.length;
-    showSlide(currentIndex);
-  }
-
-  if (e.key === 'Escape') {
-    // закриття модалки
-    modal.classList.remove('active');
-  }
-});
-
-// Перемикання слайдів
+// ====== ПЕРЕМИКАННЯ СЛАЙДІВ ======
 const showSlide = i => {
   currentSlides.forEach(s => s.classList.remove('active'));
   currentSlides[i].classList.add('active');
 };
 
+// Кнопки
 modal.querySelector('.next').addEventListener('click', () => {
   if (!currentSlides.length) return;
   currentIndex = (currentIndex + 1) % currentSlides.length;
   showSlide(currentIndex);
 });
-
 modal.querySelector('.prev').addEventListener('click', () => {
   if (!currentSlides.length) return;
   currentIndex =
     (currentIndex - 1 + currentSlides.length) % currentSlides.length;
   showSlide(currentIndex);
 });
+
+// ====== КЛАВІАТУРА ======
+document.addEventListener('keydown', e => {
+  if (!modal.classList.contains('active')) return;
+
+  if (e.key === 'ArrowRight') {
+    currentIndex = (currentIndex + 1) % currentSlides.length;
+    showSlide(currentIndex);
+  }
+
+  if (e.key === 'ArrowLeft') {
+    currentIndex =
+      (currentIndex - 1 + currentSlides.length) % currentSlides.length;
+    showSlide(currentIndex);
+  }
+
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+
+// ====== СВАЙПИ ДЛЯ МОБІЛЬНИХ ======
+function addSwipeSupport() {
+  let startX = 0;
+  let endX = 0;
+
+  slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener('touchend', e => {
+    endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        currentIndex = (currentIndex + 1) % currentSlides.length;
+      } else {
+        currentIndex =
+          (currentIndex - 1 + currentSlides.length) % currentSlides.length;
+      }
+      showSlide(currentIndex);
+    }
+  });
+}
