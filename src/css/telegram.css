@@ -23,8 +23,9 @@
   width: 48px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   transition: transform 0.4s ease;
+  flex-direction: row-reverse;
 }
 
 .icon-telegram {
@@ -37,11 +38,12 @@
   width: auto; /* тепер текст поміщається */
 }
 .telegram-text {
-  width: 106.383px;
-  color: #e7b73a;
+  width: 130px;
+  margin-left: 20px;
+  color: #335446;
   font-family: 'Stavok Grotesque';
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 700;
   line-height: 160%;
   opacity: 0;
   transform: translateX(10px);
@@ -52,9 +54,10 @@
 
 /* 🟡 Ховер-ефект */
 .telegram-bot:hover {
-  width: 179px; /* розширення кнопки */
+  width: 210px; /* розширення кнопки */
   justify-content: flex-start; /* зміщення вліво */
-  padding-left: 12px; /* невеликий відступ */
+  padding-left: 12px;
+  background: #c7cfcc; /* невеликий відступ */
 }
 
 .telegram-bot:hover .telegram-text {

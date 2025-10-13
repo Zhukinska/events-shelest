@@ -86,8 +86,21 @@
   }
 }
 
-.item {
+/* .item {
   @media screen and (min-width: 1280px) {
-    margin-top: -240px;
+    margin-top: -10px;
+  }
+} */
+
+.btn-date {
+  @media screen and (min-width: 1280px) {
+    margin-top: 190px !important;
+    margin-left: 0px !important;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .events-list li:nth-child(3) {
+    order: 5;
   }
 }
