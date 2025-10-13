@@ -65,7 +65,7 @@
   gap: 60px;
 
   @media screen and (min-width: 1280px) {
-    gap: 140px;
+    gap: 100px;
   }
 }
 
