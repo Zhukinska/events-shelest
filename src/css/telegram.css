@@ -17,6 +17,7 @@
   height: 64px;
   transition: width 0.4s ease, justify-content 0.4s ease,
     background-color 0.3s ease;
+  z-index: 1000;
 }
 
 .wrapper-icon {

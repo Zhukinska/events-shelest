@@ -3,7 +3,7 @@
   margin: 0 auto;
 
   @media screen and (min-width: 1280px) {
-    padding: 80px 40px;
+    padding: 80px 40px 0 40px;
   }
 }
 
@@ -94,8 +94,8 @@
 
 .btn-date {
   @media screen and (min-width: 1280px) {
-    margin-top: 190px !important;
-    margin-left: 0px !important;
+    margin-top: 350px !important;
+    margin-left: -150px !important;
   }
 }
 
