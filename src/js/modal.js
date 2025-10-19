@@ -1,4 +1,3 @@
-// Дані для кожної локації
 const locations = {
   big: {
     title: 'ВЕЛИКИЙ РЕСТОРАН',
@@ -119,7 +118,6 @@ const locations = {
   },
 };
 
-// ====== ЕЛЕМЕНТИ МОДАЛКИ ======
 const modal = document.getElementById('location-modal');
 const slider = modal.querySelector('.slider');
 const title = modal.querySelector('.modal-title');
@@ -130,7 +128,6 @@ const capacityBlock = modal.querySelector('.modal-capacity');
 let currentSlides = [];
 let currentIndex = 0;
 
-// Назви макетів
 function layoutNames(layout) {
   const map = {
     theatre: 'Theatre',
@@ -142,19 +139,16 @@ function layoutNames(layout) {
   return map[layout] || layout;
 }
 
-// ====== ВІДКРИТТЯ МОДАЛКИ ======
 document.querySelectorAll('.btn-location').forEach(btn => {
   btn.addEventListener('click', () => {
     const key = btn.closest('li').dataset.location;
     const data = locations[key];
     if (!data) return;
 
-    // Заповнюємо текст
     title.textContent = data.title;
     info.innerHTML = data.info;
     text.textContent = data.text;
 
-    // Ємність
     if (data.capacity) {
       capacityBlock.innerHTML = Object.entries(data.capacity)
         .map(
@@ -166,7 +160,6 @@ document.querySelectorAll('.btn-location').forEach(btn => {
       capacityBlock.innerHTML = '';
     }
 
-    // Слайди
     slider.innerHTML = data.images
       .map(
         (src, i) =>
@@ -181,12 +174,10 @@ document.querySelectorAll('.btn-location').forEach(btn => {
 
     modal.classList.add('active');
 
-    // Підключаємо свайпи
     addSwipeSupport();
   });
 });
 
-// ====== ЗАКРИТТЯ ======
 modal.querySelector('.modal-close').addEventListener('click', () => {
   modal.classList.remove('active');
 });
@@ -194,13 +185,11 @@ modal.addEventListener('click', e => {
   if (e.target === modal) modal.classList.remove('active');
 });
 
-// ====== ПЕРЕМИКАННЯ СЛАЙДІВ ======
 const showSlide = i => {
   currentSlides.forEach(s => s.classList.remove('active'));
   currentSlides[i].classList.add('active');
 };
 
-// Кнопки
 modal.querySelector('.next').addEventListener('click', () => {
   if (!currentSlides.length) return;
   currentIndex = (currentIndex + 1) % currentSlides.length;
@@ -213,7 +202,6 @@ modal.querySelector('.prev').addEventListener('click', () => {
   showSlide(currentIndex);
 });
 
-// ====== КЛАВІАТУРА ======
 document.addEventListener('keydown', e => {
   if (!modal.classList.contains('active')) return;
 
@@ -233,7 +221,6 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// ====== СВАЙПИ ДЛЯ МОБІЛЬНИХ ======
 function addSwipeSupport() {
   let startX = 0;
   let endX = 0;

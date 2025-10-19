@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const shortEncoded = encoded.slice(0, 64);
 
       const deepLink = `https://t.me/Event_Shelest_bot?start=${shortEncoded}`;
-      console.log('Telegram link:', deepLink);
 
       window.open(deepLink, '_blank');
     });
