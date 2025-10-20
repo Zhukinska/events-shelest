@@ -21,11 +21,20 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      const encoded = base64urlEncode(utmString);
+      let encoded = base64urlEncode(utmString);
 
-      const shortEncoded = encoded.slice(0, 64);
+      if (encoded.length > 64) {
+        const params = new URLSearchParams(utmString.replace(/^\?/, ''));
+        const limitedParams = new URLSearchParams();
+        if (params.has('utm_source'))
+          limitedParams.set('utm_source', params.get('utm_source'));
+        if (params.has('utm_medium'))
+          limitedParams.set('utm_medium', params.get('utm_medium'));
+        utmString = '?' + limitedParams.toString();
+        encoded = base64urlEncode(utmString);
+      }
 
-      const deepLink = `https://t.me/Event_Shelest_bot?start=${shortEncoded}`;
+      const deepLink = `https://t.me/Event_Shelest_bot?start=${encoded}`;
 
       window.open(deepLink, '_blank');
     });
