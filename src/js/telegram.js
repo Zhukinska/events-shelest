@@ -48,7 +48,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const urlParams = new URLSearchParams(window.location.search);
 
-  // 🔹 Функція для запису в cookies
   function setCookie(name, value, days) {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
     )}; expires=${date.toUTCString()}; path=/`;
   }
 
-  // 🔹 Функція для читання cookies
   function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -65,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
       return decodeURIComponent(parts.pop().split(';').shift());
   }
 
-  // 🔹 Якщо є UTM — зберігаємо або оновлюємо
   if (urlParams.toString()) {
     const utmString = '?' + urlParams.toString();
     const oldUtm = getCookie('utm_params');
@@ -73,18 +70,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (utmString !== oldUtm) {
       sessionStorage.setItem('utm_params', utmString);
       setCookie('utm_params', utmString, 7);
-      console.log('UTM-дані оновлено:', utmString);
-    } else {
-      console.log('UTM-дані залишаються без змін');
     }
   }
 
-  // 🔹 Base64 URL-енкодер
   function base64urlEncode(str) {
     return btoa(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   }
 
-  // 🔹 Основна функція — відкриває Telegram із UTM
   function openTelegramWithUtm(e) {
     e.preventDefault();
 
@@ -98,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let encoded = base64urlEncode(utmString);
 
-    // 🔹 Якщо довжина > 64 символів — залишаємо лише source і medium
     if (encoded.length > 64) {
       const params = new URLSearchParams(utmString.replace(/^\?/, ''));
       const limitedParams = new URLSearchParams();
@@ -113,12 +104,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const deepLink = `https://t.me/Event_Shelest_bot?start=${encoded}`;
-    console.log('Deep link:', deepLink);
 
     window.open(deepLink, '_blank');
   }
 
-  // 🔹 Знаходимо ВСІ кнопки, які ведуть до Event_Shelest_bot
   const telegramButtons = document.querySelectorAll(
     'a[href*="t.me/Event_Shelest_bot"]'
   );
