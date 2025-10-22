@@ -65,59 +65,65 @@ document.addEventListener('DOMContentLoaded', function () {
       return decodeURIComponent(parts.pop().split(';').shift());
   }
 
-  // Якщо є UTM в URL — зберігаємо в sessionStorage і cookies
+  // 🔹 Якщо є UTM — зберігаємо або оновлюємо
   if (urlParams.toString()) {
     const utmString = '?' + urlParams.toString();
-    sessionStorage.setItem('utm_params', utmString);
-    setCookie('utm_params', utmString, 7); // зберігаємо на 7 днів
+    const oldUtm = getCookie('utm_params');
+
+    if (utmString !== oldUtm) {
+      sessionStorage.setItem('utm_params', utmString);
+      setCookie('utm_params', utmString, 7);
+      console.log('UTM-дані оновлено:', utmString);
+    } else {
+      console.log('UTM-дані залишаються без змін');
+    }
   }
 
+  // 🔹 Base64 URL-енкодер
   function base64urlEncode(str) {
     return btoa(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   }
 
-  const telegramButton = document.querySelector('.telegram-bot');
+  // 🔹 Основна функція — відкриває Telegram із UTM
+  function openTelegramWithUtm(e) {
+    e.preventDefault();
 
-  if (telegramButton) {
-    telegramButton.addEventListener('click', function (e) {
-      e.preventDefault();
+    let utmString =
+      sessionStorage.getItem('utm_params') || getCookie('utm_params') || '';
 
-      // 🔹 Пробуємо спочатку sessionStorage, потім cookies
-      let utmString =
-        sessionStorage.getItem('utm_params') || getCookie('utm_params') || '';
+    if (!utmString) {
+      window.open('https://t.me/Event_Shelest_bot', '_blank');
+      return;
+    }
 
-      if (!utmString) {
-        window.open('https://t.me/Event_Shelest_bot', '_blank');
-        return;
-      }
+    let encoded = base64urlEncode(utmString);
 
-      let encoded = base64urlEncode(utmString);
+    // 🔹 Якщо довжина > 64 символів — залишаємо лише source і medium
+    if (encoded.length > 64) {
+      const params = new URLSearchParams(utmString.replace(/^\?/, ''));
+      const limitedParams = new URLSearchParams();
 
-      // 🔹 Якщо довжина > 64 символів — залишаємо лише source і medium
-      if (encoded.length > 64) {
-        const params = new URLSearchParams(utmString.replace(/^\?/, ''));
-        const limitedParams = new URLSearchParams();
+      if (params.has('utm_source'))
+        limitedParams.set('utm_source', params.get('utm_source'));
+      if (params.has('utm_medium'))
+        limitedParams.set('utm_medium', params.get('utm_medium'));
 
-        if (params.has('utm_source'))
-          limitedParams.set('utm_source', params.get('utm_source'));
-        if (params.has('utm_medium'))
-          limitedParams.set('utm_medium', params.get('utm_medium'));
+      utmString = '?' + limitedParams.toString();
+      encoded = base64urlEncode(utmString);
+    }
 
-        utmString = '?' + limitedParams.toString();
-        encoded = base64urlEncode(utmString);
-      }
+    const deepLink = `https://t.me/Event_Shelest_bot?start=${encoded}`;
+    console.log('Deep link:', deepLink);
 
-      const deepLink = `https://t.me/Event_Shelest_bot?start=${encoded}`;
-      console.log('Deep link:', deepLink);
-
-      window.open(deepLink, '_blank');
-
-      setTimeout(() => {
-        sessionStorage.removeItem('utm_params');
-        document.cookie =
-          'utm_params=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        console.log('UTM-дані очищено');
-      }, 1000);
-    });
+    window.open(deepLink, '_blank');
   }
+
+  // 🔹 Знаходимо ВСІ кнопки, які ведуть до Event_Shelest_bot
+  const telegramButtons = document.querySelectorAll(
+    'a[href*="t.me/Event_Shelest_bot"]'
+  );
+
+  telegramButtons.forEach(btn => {
+    btn.addEventListener('click', openTelegramWithUtm);
+  });
 });
