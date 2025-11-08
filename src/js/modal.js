@@ -80,6 +80,7 @@ const locations = {
       './lobi/3.jpg',
       './lobi/4.jpg',
       './lobi/5.jpg',
+      './lobi/6.jpg',
     ],
   },
   pool: {
@@ -94,8 +95,6 @@ const locations = {
       './pool/3.jpg',
       './pool/4.jpg',
       './pool/5.jpg',
-      './pool/6.jpg',
-      './pool/7.jpg',
     ],
   },
   terrasa: {
