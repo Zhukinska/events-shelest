@@ -18,7 +18,7 @@
 //       let utmString = sessionStorage.getItem('utm_params') || '';
 
 //       if (!utmString) {
-//         window.open('https://t.me/Event_Shelest_bot', '_blank');
+//         window.open('https://telegram.me/Event_Shelest_bot', '_blank');
 //         return;
 //       }
 
@@ -37,7 +37,7 @@
 //         encoded = base64urlEncode(utmString);
 //       }
 
-//       const deepLink = `https://t.me/Event_Shelest_bot?start=${encoded}`;
+//       const deepLink = `https://telegram.me/Event_Shelest_bot?start=${encoded}`;
 //       console.log('Deep link:', deepLink);
 
 //       window.open(deepLink, '_blank');
@@ -84,7 +84,7 @@
 //       sessionStorage.getItem('utm_params') || getCookie('utm_params') || '';
 
 //     if (!utmString) {
-//       window.open('https://t.me/Event_Shelest_bot', '_blank');
+//       window.open('https://telegram.me/Event_Shelest_bot', '_blank');
 //       return;
 //     }
 
@@ -103,13 +103,13 @@
 //       encoded = base64urlEncode(utmString);
 //     }
 
-//     const deepLink = `https://t.me/Event_Shelest_bot?start=${encoded}`;
+//     const deepLink = `https://telegram.me/Event_Shelest_bot?start=${encoded}`;
 
 //     window.open(deepLink, '_blank');
 //   }
 
 //   const telegramButtons = document.querySelectorAll(
-//     'a[href*="t.me/Event_Shelest_bot"]'
+//     'a[href*="telegram.me/Event_Shelest_bot"]'
 //   );
 
 //   telegramButtons.forEach(btn => {
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let utmString = getCookie('utm_params') || '';
 
     if (!utmString) {
-      window.open('https://t.me/Event_Shelest_bot', '_blank');
+      window.open('https://telegram.me/Event_Shelest_bot', '_blank');
       return;
     }
 
@@ -173,12 +173,12 @@ document.addEventListener('DOMContentLoaded', function () {
       encoded = base64urlEncode(utmString);
     }
 
-    const deepLink = `https://t.me/Event_Shelest_bot?start=${encoded}`;
+    const deepLink = `https://telegram.me/Event_Shelest_bot?start=${encoded}`;
     window.open(deepLink, '_blank');
   }
 
   const telegramButtons = document.querySelectorAll(
-    'a[href*="t.me/Event_Shelest_bot"]'
+    'a[href*="telegram.me/Event_Shelest_bot"]'
   );
 
   telegramButtons.forEach(btn => {
